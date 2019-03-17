@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0299d588-3c29-47b3-aad2-9f967169befa" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/cosmetic/Category/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/cosmetic/Category/CategoryController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/cosmetic/Category/CategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/cosmetic/Category/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/cosmetic/Category/CategoryController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/cosmetic/Category/CategoryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+            <state relative-caret-position="255">
+              <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -287,7 +287,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552836889670" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552837317258" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -337,7 +337,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25423000" />
+    <option name="totallyTimeSpent" value="25442000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -553,8 +553,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/cosmetic/Category/CategoryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        <state relative-caret-position="255">
+          <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
