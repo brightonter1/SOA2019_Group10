@@ -23,8 +23,7 @@ public class CosmeticController {
     public List<Cosmetic> getAllCosmeticsByUser(@PathVariable String username){
         return cosmeticService.getAllCosmeticsByUser(username.toLowerCase());
     }
-
-
+    //test commit
     // Add Cosmetic by User
 //    @RequestMapping(value = "/user/{username}/cosmetic/information",
 //            produces = "application/json",
