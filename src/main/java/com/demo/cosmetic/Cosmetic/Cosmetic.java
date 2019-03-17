@@ -7,20 +7,18 @@ public class Cosmetic {
     private String category;
     private String exp;
     private String price;
-    private String listByUsername;
-    private String wishListByUsername;
+
 
     public Cosmetic(){}
 
-    public Cosmetic(String cosmeticId, String imagePath, String name, String exp, String category, String price, String listByUsername, String wishListByUsername){
+    public Cosmetic(String cosmeticId, String imagePath, String name, String exp, String category, String price){
         this.cosmeticId = cosmeticId;
         this.imagePath = imagePath;
         this.name = name;
         this.category = category;
         this.exp = exp;
         this.price = price;
-        this.listByUsername = listByUsername;
-        this.wishListByUsername = wishListByUsername;
+
     }
 
     public String getCategory() {
@@ -29,22 +27,6 @@ public class Cosmetic {
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public String getListByUsername() {
-        return listByUsername;
-    }
-
-    public void setListByUsername(String listByUsername) {
-        this.listByUsername = listByUsername;
-    }
-
-    public String getWishListByUsername() {
-        return wishListByUsername;
-    }
-
-    public void setWishListByUsername(String wishListByUsername) {
-        this.wishListByUsername = wishListByUsername;
     }
 
     public String getCosmeticId() {
