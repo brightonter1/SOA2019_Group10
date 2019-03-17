@@ -11,7 +11,7 @@ public class Cosmetic {
 
     public Cosmetic(){}
 
-    public Cosmetic(String cosmeticId, String imagePath, String name, String exp, String category, String price){
+    public Cosmetic(String cosmeticId, String imagePath, String name, String category, String exp, String price){
         this.cosmeticId = cosmeticId;
         this.imagePath = imagePath;
         this.name = name;

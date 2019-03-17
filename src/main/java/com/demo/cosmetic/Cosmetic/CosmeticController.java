@@ -17,11 +17,11 @@ public class CosmeticController {
         return cosmeticService.getAllCosmetics();
     }
 
-    // Get All Cosmetics by User
-//    @RequestMapping("/user/{username}/cosmetic")
-//    public List<Cosmetic> getAllCosmeticsByUser(@PathVariable String username){
-//        return cosmeticService.getAllCosmeticsByUser(username.toLowerCase());
-//    }
+    // Search Cosmetics by Key
+    @RequestMapping("cosmetic/search/{keyword}")
+    public List<Cosmetic> searchKeyword(@PathVariable String keyword){
+        return cosmeticService.searchCosmeticsByKeyword(keyword.toLowerCase());
+    }
 
 
     // Add Cosmetic by User

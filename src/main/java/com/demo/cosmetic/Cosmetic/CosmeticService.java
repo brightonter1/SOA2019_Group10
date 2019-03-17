@@ -27,14 +27,13 @@ public class CosmeticService {
         return cosmetics;
     }
 
-    // Get All Cosmetics By User
-//    public List<Cosmetic> getAllCosmeticsByUser(String username){
-//
-//        return cosmetics.stream()
-//                .filter(c -> c.getListByUsername().toLowerCase().equals(username))
-//                .collect(Collectors.toList());
-//
-//    }
+    // Search Cosmetic
+    public List<Cosmetic> searchCosmeticsByKeyword(String key){
+        return cosmetics.stream()
+                .filter(c -> c.getCategory().toLowerCase().equals(key))
+                .collect(Collectors.toList());
+    }
+
 
     // Add Cosmetic By User
 //    public void addCosmeticByUser(String username, Cosmetic cos){
