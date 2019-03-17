@@ -22,8 +22,7 @@ public class CosmeticController {
     public List<Cosmetic> searchKeyword(@PathVariable String keyword){
         return cosmeticService.searchCosmeticsByKeyword(keyword.toLowerCase());
     }
-
-
+    //test commit
     // Add Cosmetic by User
 //    @RequestMapping(value = "/user/{username}/cosmetic/information",
 //            produces = "application/json",
