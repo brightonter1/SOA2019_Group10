@@ -18,12 +18,9 @@ public class CosmeticController {
     }
 
     // Search Cosmetics by Key
-    @RequestMapping("cosmetic/search/{keyword}")
+    @RequestMapping("cosmeticss/search/{keyword}")
     public List<Cosmetic> searchKeyword(@PathVariable String keyword){
         return cosmeticService.searchCosmeticsByKeyword(keyword.toLowerCase());
     }
-
-
-
 
 }

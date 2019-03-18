@@ -34,20 +34,4 @@ public class CosmeticService {
                 .collect(Collectors.toList());
     }
 
-
-    // Add Cosmetic By User
-//    public void addCosmeticByUser(String username, Cosmetic cos){
-//        cos.setListByUsername(username);
-//        cosmetics.add(cos);
-//    }
-
-
-
-
-
-
-
-
-
-
 }
