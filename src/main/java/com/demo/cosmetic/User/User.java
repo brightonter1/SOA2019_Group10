@@ -1,7 +1,6 @@
 package com.demo.cosmetic.User;
 
 public class User {
-    private int id;
     private String firstname;
     private String lastname;
     private String username;
@@ -9,20 +8,11 @@ public class User {
 
     public User(){}
 
-    public User(int id,String firstname,String lastname,String username,String password){
-        this.id = id;
+    public User(String firstname,String lastname,String username,String password){
         this.firstname = firstname;
         this.lastname = lastname;
         this.username = username;
         this.password = password;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getFirstname() {
