@@ -13,9 +13,10 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    // Search User by Key
-    @RequestMapping("cosmetic/search/{keyword}")
-    public List<User> searchKeyword(@PathVariable String keyword){
-        return userService.searchUsersByKeyword(keyword.toLowerCase());
+    //Login
+    @RequestMapping("user/login")
+    public void login(@RequeastBody String username,@RequeastBody  String password){
+
     }
+
 }
