@@ -18,13 +18,25 @@ public class UserService {
     public List<User> getAllUsers(){
         return users;
     }
-
+    
     //Login Service
-    public void loginUser(String username,String password) {
-
+    public String loginUser(String username,String password) {
+        for (User row : users) {
+            if (row.getUsername().equals(username)) {
+                if (row.getPassword().equals(password)) {
+                    return "Login Complete";
+                } else {
+                    return "Password is wrong!";
+                }
+            } else {
+                return "No Username in the system";
+            }
+        }
+        return "";
     }
+    
     //Register Service
-    public void registerUser(){
-
+    public void registerUser(String fn,String ln,String un,String pw){
+        users.add(new User(fn,ln,un,pw));
     }
 }
