@@ -1,7 +1,7 @@
 # SOA2019_Group10
 
 ## How to RUN Project
-- Java 11 Port 8080
+- Java 11 / Port 8080
 - clone project
   - git clone https://github.com/kukkikkpl/SOA2019_Group10.git
 - compile
@@ -24,12 +24,15 @@
 - Statement
   - GET/user/:id/statement
 - Wishlist
-  - GET/user/wishlist
-  - GET/user/wishlist/cosmetic
-  - DELETE/user/wishlist/cosmetic
-  - POST/user/wishlist
+  - {username} -> {"Pond,"Bright"}
+    - GET/{username}/wishlist 
+    - GET/{username}/wishlist/cosmetic
+  - Data JSON (application/json)  
+    - DELETE/{username}/wishlist/cosmetic
+    - POST/{username}/wishlist
 - Cosmetic Service
-  - GET/cosmetics
-  - GET/cosmetic/search
+  - {keyword} -> {"Body","Face","Hair"}
+    - GET/cosmetics
+    - GET/cosmetic/search/{keyword}
 - Catagory Service
   - GET/category
