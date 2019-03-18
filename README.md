@@ -3,8 +3,10 @@
 ## How to RUN Project
 - clone project
   - git clone https://github.com/kukkikkpl/SOA2019_Group10.git
+- compile
+  - mvnw clean package
 - run project
-  - spring-boot:run
+  - mvnw spring-boot:run
 - open the localhost
   - http://localhost:8080 {/@RequestMapping}
 
