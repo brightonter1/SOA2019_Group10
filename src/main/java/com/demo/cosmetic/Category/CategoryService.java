@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class CategoryService {
 
-    //private Category category;
+//    private Category category;
 
     List<Category> categories = new ArrayList<>(Arrays.asList(
             new Category("Hair"),
@@ -21,7 +21,18 @@ public class CategoryService {
     public List getAllCategories(){
         return categories;
     }
-    //Delete Category
+
+    //Add Category
+    public String addCategories(Category category){
+        categories.add(category);
+        return "Add Complete";
+    }
+
+    //Remove Category
+    public String removeCategories(Category category){
+        categories.removeIf(c -> c.getCategoryName().toLowerCase().equals(category.getCategoryName().toLowerCase()));
+        return "Remove Complete";
+    }
 
 
 }
