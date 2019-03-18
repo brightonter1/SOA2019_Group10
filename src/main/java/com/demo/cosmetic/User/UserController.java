@@ -13,10 +13,16 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    //Login
-    @RequestMapping("user/login")
-    public void login(@RequeastBody String username,@RequeastBody  String password){
+    //Login controller
+    @RequestMapping(value = "user/login",method = RequestMethod.GET)
+    public void login(String username, String password){
+        userService.loginUser(username,password);
+    }
 
+    //Register controller
+    @RequestMapping(value = "user/register" , method = RequestMethod.POST)
+    public void register(String fname,String lname,String user,String pass){
+        userService.registerUser(fname,lname,user,pass);
     }
 
 }
