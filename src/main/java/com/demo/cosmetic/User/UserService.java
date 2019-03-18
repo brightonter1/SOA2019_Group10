@@ -1,24 +1,24 @@
 package com.demo.cosmetic.User;
 
+import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class UserService {
-
-    private User user;
-
-    private List<User> users = new ArrayList<>(Arrays.asList(
+    private ArrayList<User> users = new ArrayList<>(Arrays.asList(
             new User( "Pim", "Jaidee", "pimJaidee", "123456"),
             new User("Tommy", "K", "ttk34", "123456")
     ));
 
     // Get all user
-    public List<User> getAllUsers(){
+    public ArrayList<User> getAllUsers(){
         return users;
     }
-    
+
     //Login Service
     public String loginUser(String username,String password) {
         for (User row : users) {
@@ -34,9 +34,11 @@ public class UserService {
         }
         return "";
     }
-    
+
     //Register Service
     public void registerUser(String fn,String ln,String un,String pw){
         users.add(new User(fn,ln,un,pw));
     }
+
+
 }
