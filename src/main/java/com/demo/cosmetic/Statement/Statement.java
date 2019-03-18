@@ -6,17 +6,27 @@ public class Statement {
         private String date;
         private String itemName;
         private String price;
+        private String user;
 
         public Statement() {
         }
 
-        public Statement(String date, String itemName, String price) {
-            this.date = date;
-            this.itemName = itemName;
-            this.price = price;
-        }
+    public Statement(String date, String itemName, String price, String user) {
+        this.date = date;
+        this.itemName = itemName;
+        this.price = price;
+        this.user = user;
+    }
 
-        public String getDate() {
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getDate() {
             return date;
         }
 

@@ -18,6 +18,11 @@ public class StatementArray {
     }
 
     public ArrayList<Statement> getStatements() {
+
         return statements;
+    }
+
+    public int size(){
+        return statements.size();
     }
 }
