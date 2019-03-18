@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0299d588-3c29-47b3-aad2-9f967169befa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/cosmetic/Category/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/cosmetic/Category/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/cosmetic/Category/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/cosmetic/Category/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/cosmetic/Category/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/cosmetic/Category/CategoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/cosmetic/Category/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/cosmetic/Category/CategoryService.class" afterDir="false" />
-    </list>
+    <list default="true" id="0299d588-3c29-47b3-aad2-9f967169befa" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -264,12 +256,12 @@
       <workItem from="1552830028289" duration="1539000" />
       <workItem from="1552843514946" duration="853000" />
       <workItem from="1552844391090" duration="1385000" />
-      <workItem from="1552846196967" duration="166000" />
+      <workItem from="1552846196967" duration="347000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26349000" />
+    <option name="totallyTimeSpent" value="26530000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -294,7 +286,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32911393" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" weight="0.4416315" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4992636" visible="true" weight="0.4416315" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4992636" weight="0.3994374" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
