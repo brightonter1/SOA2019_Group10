@@ -1,6 +1,7 @@
 # SOA2019_Group10
 
 ## How to RUN Project
+- Java 11 Port 8080
 - clone project
   - git clone https://github.com/kukkikkpl/SOA2019_Group10.git
 - compile
