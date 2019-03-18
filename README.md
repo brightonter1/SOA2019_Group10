@@ -6,7 +6,7 @@
 - run project
   - spring-boot:run
 - open the localhost
-  - http://localhost:8080/ {@RequestMapping}
+  - http://localhost:8080 {/@RequestMapping}
 
 ## API
 - User Service
