@@ -13,7 +13,10 @@
 
 ## API
 - User Service
-  - GET/user
+  - Data JSON (application/json) / {username:password} -> {"admin:"123456"} {"pimJaidee":"123456"}
+    - GET/user
+    - GET/user/login
+    - GET/user/register
   - GET/user/:id
   - POST/user/:id
   - GET/user/:id/cosmetic
