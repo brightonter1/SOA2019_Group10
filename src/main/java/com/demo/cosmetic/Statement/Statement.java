@@ -1,12 +1,23 @@
 package com.demo.cosmetic.Statement;
 
+import net.bytebuddy.dynamic.loading.ClassReloadingStrategy;
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+import org.springframework.boot.autoconfigure.web.ResourceProperties;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Statement {
 
-
+        @Id
+//        @GeneratedValue(strategy = GenerationType.AUTO)
         private String date;
         private String itemName;
         private String price;
-        private String user;
+        private String id;
 
         public Statement() {
         }
@@ -15,15 +26,15 @@ public class Statement {
         this.date = date;
         this.itemName = itemName;
         this.price = price;
-        this.user = user;
+        this.id = user;
     }
 
     public String getUser() {
-        return user;
+        return id;
     }
 
     public void setUser(String user) {
-        this.user = user;
+        this.id = user;
     }
 
     public String getDate() {
