@@ -1,0 +1,33 @@
+package com.example.app.UserTest;
+
+
+import com.example.app.AppApplication;
+import com.example.app.User.User;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = {AppApplication.class},webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+public class UserControllerTest {
+
+    @Autowired
+    private TestRestTemplate restTemplate;
+
+    @Test
+    public void getAlluser(){
+        List<User> userList= restTemplate.getForObject("/user", ArrayList.class);
+
+        assertEquals("[{firstname=Pim, lastname=Jaidee, username=pimJaidee, password=123456}, {firstname=minmin, lastname=adminmin, username=admin, password=123456}]",userList.toString());
+    }
+
+}

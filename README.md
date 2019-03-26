@@ -29,10 +29,9 @@
 - Wishlist
   - {username} -> {"Pond,"Bright"}
     - GET/{username}/wishlist 
-    - POST/{username}/wishlist
-    - DELETE/{username}/wishlist
+    - GET/{username}/wishlist/cosmetic
   - Data JSON (application/json)  
-    - DELETE/{username}/wishlist/
+    - DELETE/{username}/wishlist/cosmetic
     - POST/{username}/wishlist
 - Cosmetic Service
   - {keyword} -> {"Body","Face","Hair"}
