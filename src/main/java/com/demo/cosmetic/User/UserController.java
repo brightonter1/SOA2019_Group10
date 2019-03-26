@@ -25,7 +25,7 @@ public class UserController {
     }
 
     //Register controller
-    @RequestMapping(value = "/user/register", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/register", method = RequestMethod.POST)
     public String register(@RequestBody User user){
         return userService.registerUser(user);
     }

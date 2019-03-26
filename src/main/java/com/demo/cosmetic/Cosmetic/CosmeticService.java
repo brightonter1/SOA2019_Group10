@@ -1,5 +1,6 @@
 package com.demo.cosmetic.Cosmetic;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,7 +11,6 @@ import java.util.stream.Collectors;
 @Service
 public class CosmeticService {
 
-    private Cosmetic cosmetic;
 
     private List<Cosmetic> cosmetics = new ArrayList<>(Arrays.asList(
             new Cosmetic("NO001", "", "Soap", "Body","01/02/2017", "39"),
