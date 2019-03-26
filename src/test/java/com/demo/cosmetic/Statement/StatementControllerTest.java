@@ -22,7 +22,7 @@ public class StatementControllerTest {
     private TestRestTemplate restTemplate;
     @Test
     public void getStatement(){
-        List stateList  = restTemplate.getForObject("/user/pond/statement", List.class);
+        List stateList  = restTemplate.getForObject("/statement/pond", List.class);
         assertEquals("[{date=01/02/1997, itemName=lipstick, price=10000, user=pond}]", stateList.toString());
     }
 

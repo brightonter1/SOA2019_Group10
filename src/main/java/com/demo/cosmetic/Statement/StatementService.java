@@ -1,32 +1,48 @@
 package com.demo.cosmetic.Statement;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Optional;
 
 @Service
 public class StatementService {
 
-    private StatementArray statementArray = new StatementArray();
 
-    public ArrayList<Statement> getStatementReport(String id){
-        Statement statement = new Statement();
+    private ArrayList<Statement> statements = new ArrayList<Statement>(Arrays.asList(new Statement(
+            "01/07/1997", "lipstick", "1000", "game"), new Statement(
+            "01/07/1997", "lipstick", "1000", "jame"), new Statement(
+            "01/07/1997", "eiseis", "1000", "game"), new Statement(
+                    "01/02/1997", "lipstick", "10000", "pond"
+            )
+    ));
 
-        if(statementArray.size() == 0){
+    public ArrayList<Statement> getStatementReportById(String id){
+        System.out.println("Statment By Id : " + id);
+        ArrayList<Statement> selectedStatement = new ArrayList<Statement>();
+        boolean status = true;
+        int count = 0;
+        while(status){
+            System.out.println(count);
 
-            statement.setPrice("10000");
-            statement.setUser(id);
-            statement.setItemName("lipstick");
-            statement.setDate("01/02/1997");
-            addStatementToReport(statement);
-
+            if(statements.get(count).getUser().equals(id)){
+                selectedStatement.add(statements.get(count));
+                System.out.println("Id : " + statements.get(count).getUser());
+            }
+            count++;
+            if(statements.size() == count){
+                status = false;
+            }
         }
-
-        return  statementArray.getStatements();
+        return  selectedStatement;
     }
 
-    public void addStatementToReport(Statement statement){
-        statementArray.addStatement(statement);
-    }
+        public ArrayList<Statement> getAllStatementReport(){
+            return statements;
+        }
 
 }
