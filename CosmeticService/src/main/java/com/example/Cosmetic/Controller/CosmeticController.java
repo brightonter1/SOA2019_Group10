@@ -3,7 +3,10 @@ package com.example.Cosmetic.Controller;
 import com.example.Cosmetic.Model.Cosmetic;
 import com.example.Cosmetic.Service.CosmeticService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,6 +17,18 @@ public class CosmeticController {
 
     @Autowired
     private CosmeticService cosmeticService;
+
+    @GetMapping("/greeting")
+    public String greeting() {
+        return "index";
+    }
+
+//    @RequestMapping("/")
+//    public ModelAndView cosmetic() {
+//        ModelAndView mav = new ModelAndView();
+//        mav.setViewName("index");
+//        return mav;
+//    }
 
     @GetMapping("/cosmetics")
     public List<Cosmetic> getAllCosmetic() throws IOException {
