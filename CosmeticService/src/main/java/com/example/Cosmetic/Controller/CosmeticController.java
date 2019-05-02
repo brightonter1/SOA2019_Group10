@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class CosmeticController {
@@ -27,5 +28,10 @@ public class CosmeticController {
     @RequestMapping(value = "/cosmetics/{id}", method = RequestMethod.DELETE)
     public void removeCosmetic(@PathVariable Long id){
         cosmeticService.removeCosmetic(id);
+    }
+
+    @RequestMapping(value = "cosmetics/{id}", method = RequestMethod.GET)
+    public Optional<Cosmetic> findItemById(@PathVariable Long id){
+        return cosmeticService.findItemById(id);
     }
 }

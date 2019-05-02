@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CosmeticService {
@@ -25,6 +26,12 @@ public class CosmeticService {
     public void removeCosmetic(Long id){
         cosmeticRepository.deleteById(id);
     }
+
+    public Optional<Cosmetic> findItemById(Long id){
+        return cosmeticRepository.findById(id);
+    }
+
+
 
 
 }

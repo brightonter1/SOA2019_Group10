@@ -27,12 +27,13 @@ public class CosmeticApplication {
 	}
 
 
+
 	@Bean
 	CommandLineRunner runner(CosmeticRepository cosmeticRepository){
 		return args -> {
 			Logger logger = LoggerFactory.getLogger(CosmeticApplication.class);
 			logger.info("Loading.........................");
-			String url = "https://makeup-api.herokuapp.com/api/v1/products.json";
+			String url = "https://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush";
 			URL obj = new URL(url);
 			HttpURLConnection conn = (HttpURLConnection) obj.openConnection();
 
@@ -60,14 +61,15 @@ public class CosmeticApplication {
 				e.printStackTrace();
 			}
 
-			ObjectMapper mapper = new ObjectMapper();
-			for (int i = 0; i < json.size(); i++) {
-				JSONObject data = (JSONObject) json.get(i);
-				String dataString = data.toString();
-				Cosmetic cosmetic = mapper.readValue(dataString, Cosmetic.class);
-				cosmetic.setName(cosmetic.getName().replaceAll("\\s", ""));
-				cosmeticRepository.save(cosmetic);
-			}
+//			ObjectMapper mapper = new ObjectMapper();
+//			for (int i = 0; i < 30; i++) {
+//				JSONObject data = (JSONObject) json.get(i);
+//				String dataString = data.toString();
+//				Cosmetic cosmetic = mapper.readValue(dataString, Cosmetic.class);
+//				cosmetic.setName(cosmetic.getName().replaceAll("\\s", ""));
+//				cosmeticRepository.save(cosmetic);
+//			}
+
 		};
 	}
 }

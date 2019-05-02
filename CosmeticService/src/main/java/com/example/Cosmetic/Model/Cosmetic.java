@@ -43,8 +43,6 @@ public class Cosmetic{
     private String rating;
     private String category;
 
-    @JsonIgnore
-    @Transient
     private String product_type;
 
     @ElementCollection
@@ -59,11 +57,7 @@ public class Cosmetic{
     @JsonIgnore
     @Transient
     private String updated_at;
-    @JsonIgnore
-    @Transient
     private String product_api_url;
-    @JsonIgnore
-    @Transient
     private String api_featured_image;
 
     @Embedded
