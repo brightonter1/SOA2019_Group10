@@ -1,0 +1,29 @@
+<template>
+  <div>
+    <el-card
+      :body-style="{ padding: '0px' }"
+      style="margin-bottom: 1em;"
+      shadow="hover"
+    >
+      <img src="../assets/cosmetic-img.jpg"/>
+      <div style="padding: 1em;">
+        <span>Cosmetic</span>
+        <div class="bottom clearfix">
+          <el-button type="text" class="button">Operating</el-button>
+        </div>
+      </div>
+    </el-card>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "CosmeticCard"
+};
+</script>
+
+<style scoped>
+div {
+  margin: 5px;
+}
+</style>
