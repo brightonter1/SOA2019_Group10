@@ -1,10 +1,7 @@
 package com.example.Cosmetic;
 
-import com.example.Cosmetic.Model.Cosmetic;
 import com.example.Cosmetic.Repository.CosmeticRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
@@ -13,6 +10,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -26,6 +26,15 @@ public class CosmeticApplication {
 		SpringApplication.run(CosmeticApplication.class, args);
 	}
 
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurerAdapter() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/**").allowedOrigins("*");
+			}
+		};
+	}
 
 
 	@Bean
@@ -72,4 +81,6 @@ public class CosmeticApplication {
 
 		};
 	}
+
+
 }

@@ -27,7 +27,7 @@ public class CosmeticService {
         cosmeticRepository.deleteById(id);
     }
 
-    public Optional<Cosmetic> findItemById(Long id){
+    public Optional<Cosmetic> getItemById(Long id){
         return cosmeticRepository.findById(id);
     }
 
