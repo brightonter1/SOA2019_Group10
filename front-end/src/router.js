@@ -39,6 +39,16 @@ export default new Router({
       path: "/wishlist",
       name: "wishlist",
       component: () => import("./views/Wishlist.vue")
+    },
+    {
+      path: "/test",
+      name: "test",
+      component: () => import("./views/Test.vue")
+    },
+    {
+      path: "/cosmetic",
+      name: "cosmetic",
+      component: () => import("./views/UserCosmetic.vue")
     }
   ]
 });
