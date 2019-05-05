@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     fetchCosmetic() {
-      axios.get("http://makeup-api.herokuapp.com/api/v1/products.json").then(
+      axios.get("http://localhost:8080/cosmetics/").then(
         function(response) {
           this.cosmetic = response.data;
           console.log(response.data);
