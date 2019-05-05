@@ -27,6 +27,7 @@ public class UserService {
 
     @Autowired
     PasswordEncoder passwordEncoder;
+
     private static final String SECERT_KEY = "bright";
 
     public ResponseEntity<CustomResponse> signupService(UserDTO userDTO) {
