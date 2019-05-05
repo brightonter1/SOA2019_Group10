@@ -11,6 +11,7 @@
           <router-link to="/statement/"><el-button>Statement</el-button></router-link>
           <router-link to="/wishlist/"><el-button>Wish list</el-button></router-link>
           <router-link to="/test/"><el-button>Test</el-button></router-link>
+          <router-link to="/cosmetic/"><el-button>Cosmetic</el-button></router-link>
         </div>
       </el-col>
       <el-col :xs="5" :sm="5" :md="5" :lg="4" :xl="4">
