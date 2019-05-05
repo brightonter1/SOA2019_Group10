@@ -2,6 +2,7 @@ package com.cosmetic.user.user.service;
 
 import com.cosmetic.user.user.domain.UserDomain;
 import com.cosmetic.user.user.dto.UserDTO;
+import com.cosmetic.user.user.dto.UsernameEmailDTO;
 import com.cosmetic.user.user.dto.UsernamePasswordDTO;
 import com.cosmetic.user.user.repository.UserRepository;
 import com.cosmetic.user.user.response.CustomException;
@@ -27,6 +28,9 @@ public class UserService {
 
     @Autowired
     PasswordEncoder passwordEncoder;
+
+    @Autowired
+    TokenService tokenService;
 
     private static final String SECERT_KEY = "bright";
 
@@ -70,5 +74,18 @@ public class UserService {
                 .setExpiration(expiration)
                 .signWith(SignatureAlgorithm.HS256, SECERT_KEY)
                 .compact();
+    }
+
+    public UsernameEmailDTO getUserInfo(String token){
+        UsernameEmailDTO usernameEmailDTO;
+        UserDomain userDomain;
+        if(tokenService.validateToken(token)){
+            userDomain = userRepository.findByUsername(tokenService.getUsernameFromToken(token));
+            usernameEmailDTO = new UsernameEmailDTO(userDomain.getUsername(), userDomain.getEmail());
+
+        }else {
+            usernameEmailDTO = null;
+        }
+        return usernameEmailDTO;
     }
 }

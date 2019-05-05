@@ -1,7 +1,7 @@
 package com.cosmetic.user.user.controller;
 
-import com.cosmetic.user.user.domain.UserDomain;
 import com.cosmetic.user.user.dto.UserDTO;
+import com.cosmetic.user.user.dto.UsernameEmailDTO;
 import com.cosmetic.user.user.dto.UsernamePasswordDTO;
 import com.cosmetic.user.user.response.CustomResponse;
 import com.cosmetic.user.user.response.TokenResponse;
@@ -32,9 +32,8 @@ public class UserController {
     }
 
     @GetMapping("/{username}")
-    public String getUser(@RequestHeader (value = "Authorization") String token){
-        System.out.println(tokenService.getUsernameFromToken(token) + "okay");
-        return tokenService.getUsernameFromToken(token);
+    public UsernameEmailDTO getUser(@RequestHeader (value = "Authorization") String token){
+        return userService.getUserInfo(token);
 
     }
 

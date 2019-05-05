@@ -1,6 +1,9 @@
 package com.cosmetic.user.user.service;
 
+import com.cosmetic.user.user.response.CustomException;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,16 +13,25 @@ public class TokenService {
 
 
     // check signature
-    public void validateToken() {
+    public boolean validateToken(String token) {
+        try {
+            Jwts.parser().setSigningKey(SECERT_KEY).parseClaimsJws(cleanToken(token));
+            return true;
+        } catch (JwtException | IllegalArgumentException e) {
+            throw new CustomException("Expired or invalid JWT token", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
 
     }
 
     public String getUsernameFromToken(String token) {
-        System.out.println(token);
-        try{
-            return Jwts.parser().setSigningKey(SECERT_KEY).parseClaimsJws(token).getBody().getSubject();
-        } catch (Exception ex){
-            return ex.toString();
+        if(validateToken(token)){
+            return Jwts.parser().setSigningKey(SECERT_KEY).parseClaimsJws(cleanToken(token)).getBody().getSubject();
+        }else {
+            return "Expired or invalid JWT token";
         }
+    }
+
+    private String cleanToken(String token){
+        return token.split(" ")[1];
     }
 }
