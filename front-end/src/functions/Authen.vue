@@ -43,6 +43,7 @@ export default {
                 }
             }).then(res=>{
                 console.log(res)
+                localStorage.setItem('username', res.data.username)
                 return res.data
             })
             .catch(err=>{
