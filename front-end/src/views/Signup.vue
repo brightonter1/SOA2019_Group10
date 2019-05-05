@@ -29,8 +29,9 @@
             autocomplete="off"
           ></el-input>
         </el-form-item>
+
         <el-form-item>
-          <el-button type="primary" @click="register(signupForm)"
+          <el-button type="primary" @click="register(signupForm.username, signupForm.email, signupForm.password)"
             >สมัครสมาชิก</el-button
           >
         </el-form-item>
