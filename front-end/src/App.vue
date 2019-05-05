@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import auth from './functions/Authen'
 import Navigation from "./components/Navigation";
 import BottomNav from "./components/BottomNav";
 export default {
@@ -19,6 +20,12 @@ export default {
   component: {
     Navigation: Navigation,
       BottomNav: BottomNav
+  },
+  methods:{
+    ...auth.methods
+  },
+  mounted(){
+    this.checklogin()
   }
 };
 </script>

@@ -37,10 +37,17 @@ export default {
             })
         },
         checklogin(){
-            axios.get(server + 'user/username', {
+            axios.get(server + 'user/information', {
                 headers:{
-                    'Authorization': localStorage.token
+                    'Authorization': 'Baerer ' + localStorage.token
                 }
+            }).then(res=>{
+                console.log(res)
+                return res.data
+            })
+            .catch(err=>{
+                localStorage.clear()
+                console.log('not login')
             })
         }
     },
