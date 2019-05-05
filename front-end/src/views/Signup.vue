@@ -51,7 +51,7 @@
 
 <script>
 import firebase from 'firebase';
-import authen from '../functions/Authen'
+import auth from '../functions/Authen'
 
 export default {
   name: "Signup",
@@ -139,7 +139,7 @@ export default {
     };
   },
   methods: {
-    ...authen.methods,
+    ...auth.methods,
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
