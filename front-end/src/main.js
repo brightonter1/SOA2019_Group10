@@ -6,6 +6,9 @@ import locale from "element-ui/lib/locale/lang/en";
 import Navigation from "./components/Navigation";
 import "element-ui/lib/theme-chalk/index.css"
 import 'element-ui/lib/theme-chalk/display.css';
+import VueLazyload from 'vue-lazyload'
+
+Vue.use(VueLazyload)
 
 Vue.use(Element, { locale });
 

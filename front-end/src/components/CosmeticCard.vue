@@ -7,7 +7,7 @@
     >
       <img
         :src="makeup.image_link"
-        style="height: 200px; width: auto; padding: 20px"
+        style="height: 200px; width: 200px; padding: 20px; object-fit: cover"
       />
       <div style="padding: 1em;">
         <span>{{ makeup.name }}</span>
