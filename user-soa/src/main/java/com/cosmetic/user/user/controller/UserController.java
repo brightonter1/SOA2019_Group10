@@ -31,7 +31,7 @@ public class UserController {
         return userService.signinService(usernamePasswordDTO);
     }
 
-    @GetMapping("/{username}")
+    @GetMapping("/information")
     public UsernameEmailDTO getUser(@RequestHeader (value = "Authorization") String token){
         return userService.getUserInfo(token);
 
