@@ -3,10 +3,14 @@ package com.example.WishlistService.Controller;
 import com.example.WishlistService.Model.Cosmetic;
 import com.example.WishlistService.Model.Wishlist;
 import com.example.WishlistService.Repository.WishListRepository;
+import com.example.WishlistService.Service.UserService;
 import com.example.WishlistService.Service.WishListService;
+import com.example.WishlistService.dto.CustomResponse;
+import com.example.WishlistService.dto.UserDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
