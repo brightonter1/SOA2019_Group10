@@ -7,9 +7,9 @@
     >
       <img src="../assets/cosmetic-img.jpg"/>
       <div style="padding: 1em;">
-        <span>Cosmetic</span>
+        <span>{{ name }}</span>
         <div class="bottom clearfix">
-          <el-button type="text" class="button">Operating</el-button>
+          <el-button type="text" class="button">Click</el-button>
         </div>
       </div>
     </el-card>
@@ -18,8 +18,15 @@
 
 <script>
 export default {
-  name: "CosmeticCard"
-};
+  name: "CosmeticCard",
+  data(){
+    return{
+      name: 'Name',
+
+
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -6,6 +6,13 @@ import locale from "element-ui/lib/locale/lang/en";
 import Navigation from "./components/Navigation";
 import "element-ui/lib/theme-chalk/index.css"
 import 'element-ui/lib/theme-chalk/display.css';
+import VueSession from 'dwy-vue-session'
+ 
+Vue.use(VueSession,{
+  maxAge:1000*60*60*24,
+  prefix:'app'
+  
+});
 
 Vue.use(Element, { locale });
 

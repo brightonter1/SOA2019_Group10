@@ -9,11 +9,14 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "dwy-vue-session": "^1.0.9",
     "element-ui": "^2.8.2",
     "file-loader": "^3.0.1",
+    "firebase": "^5.11.1",
     "url-loader": "^1.1.2",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.3"
+    "vue-router": "^3.0.3",
+    "vue-session": "^1.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",
