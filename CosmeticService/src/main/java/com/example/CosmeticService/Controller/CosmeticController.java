@@ -43,11 +43,5 @@ public class CosmeticController {
 
     }
 
-//    @RequestMapping(value = "/", method = RequestMethod.GET)
-//    public List<Cosmetic> getAllById(){
-//        return cosmeticService.getAllById();
-//    }
-
-
 
 }

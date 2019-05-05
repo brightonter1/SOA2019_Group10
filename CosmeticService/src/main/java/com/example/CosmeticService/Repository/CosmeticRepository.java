@@ -8,6 +8,5 @@ import java.util.List;
 public interface CosmeticRepository extends CrudRepository<Cosmetic,Long> {
 
     List<Cosmetic> findAllByOrderById();
-    List<Cosmetic> findAllById();
 
 }
