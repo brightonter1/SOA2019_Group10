@@ -14,7 +14,6 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Arrays;
 import java.util.List;
 
-@RequestMapping("/wishlist")
 @RestController
 public class WishListController {
 
@@ -32,18 +31,18 @@ public class WishListController {
 //        return (List<Cosmetic>) restTemplate.getForObject("http://localhost:8091/cosmetics/hello", Cosmetic.class);
 //    }
 
-    @GetMapping("")
+    @GetMapping("/wishlist")
     public List<Wishlist> start(){
         return wishListService.getAllItem();
     }
 
 
-    @RequestMapping(value = "/{username}", method = RequestMethod.POST)
+    @RequestMapping(value = "/wishlist/{username}", method = RequestMethod.POST)
     public void addItem(@PathVariable String username, @RequestParam Long id){
         wishListService.addItem(username,id);
     }
 
-    @RequestMapping(value = "/{username}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/wishlist/{username}", method = RequestMethod.DELETE)
     public void delItem(@PathVariable String username, @RequestParam Long id){
         wishListService.removeItem(username, id);
     }

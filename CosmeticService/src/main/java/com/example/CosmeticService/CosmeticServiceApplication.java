@@ -77,7 +77,7 @@ public class CosmeticServiceApplication {
 			}
 
 //			ObjectMapper mapper = new ObjectMapper();
-//			for (int i = 0; i < 150 ;i++) {
+//			for (int i = 0; i < 10 ;i++) {
 //				JSONObject data = (JSONObject) json.get(i);
 //				String dataString = data.toString();
 //				Cosmetic cosmetic = mapper.readValue(dataString, Cosmetic.class);
