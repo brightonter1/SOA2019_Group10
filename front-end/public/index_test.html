@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>Project</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <!-- <div id="app"></div> -->
+
+    <h1>Hello WOrld</h1>
+
+    <!-- เอาข้อมูลทั้งหมดของสินค้า
+    <div id="root">
+        <ul v-for="i in cosmetic">
+            <h1>{{ i.name }}</h1>
+        </ul>
+    </div> -->
+
+    <!--  เอาข้อมูลสินค้าตามรหัสสินค้า (id)
+        <div id="root2">
+        {{cosmetic.id}}
+    </div> -->
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+    /*
+                                เอาข้อมูลทั้งหมดของสินค้า
+                                var app = new Vue({
+                                    el: '#root',
+                                    data: {
+                                        cosmetic: []
+                                    },
+                                    mounted() {
+                                        this.fetchCosmetic();
+                                     },
+                                    methods: {
+                                        fetchCosmetic() {
+                                            axios.get("http://localhost:8080/cosmetics/").then(function(response) {
+                                                this.cosmetic = response.data;
+                                                console.log(response.data);
+                                            }.bind(this));
+                                        }
+                                    }
+                                })*/
+    /*
+    var app = new Vue({
+        el: '#root2',
+        data: {
+            cosmetic: []
+        },
+        mounted() {
+            this.fetchCosmetic();
+        },
+        methods: {
+            fetchCosmetic() {                               *** ตรงเลข 5 ใส่เป็นตัวแปร id ตอนกดสินค้ามา ***
+                axios.get("http://localhost:8080/cosmetics/" + 5).then(function(response) {
+                    this.cosmetic = response.data;
+                    console.log(response.data);
+                }.bind(this));
+            }
+        }
+    })*/
+</script>
+
+</html>
