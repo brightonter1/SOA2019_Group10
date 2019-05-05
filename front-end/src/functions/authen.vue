@@ -2,7 +2,7 @@
 <script>
 import axios from 'axios'
 import variable from './Globalvar'
-const server = variable.data()
+const server = variable.data().server
 export default {
     data(){
         return{
@@ -11,6 +11,7 @@ export default {
     },
     methods: {
         login(user){
+            console.log(server)
             axios.post(server + 'user/signin', user)
             .then(res=>{
                 localStorage.setItem('token', res.data.token)
@@ -31,7 +32,11 @@ export default {
             })
         },
         checklogin(){
-            
+            axios.get(server + 'main', {
+                headers:{
+                    'Authorization': localStorage.token
+                }
+            })
         }
     },
 }
