@@ -21,7 +21,12 @@ export default {
                 this.msg = 'fail'
             })
         },
-        register(user){
+        register(username, email, password){
+            let user = {
+                username: username,
+                email: email,
+                password: password
+            }
             axios.post(server + 'user/signup', user)
             .then(res=>{
                 this.msg = 'register success'
@@ -32,7 +37,7 @@ export default {
             })
         },
         checklogin(){
-            axios.get(server + 'main', {
+            axios.get(server + 'user/username', {
                 headers:{
                     'Authorization': localStorage.token
                 }
