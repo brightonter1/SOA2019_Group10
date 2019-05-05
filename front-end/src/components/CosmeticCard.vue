@@ -5,11 +5,11 @@
       style="margin-bottom: 1em;"
       shadow="hover"
     >
-      <img :src="makeup.image_link" style="height: 200px; width: auto"/>
+      <img src="../assets/cosmetic-img.jpg"/>
       <div style="padding: 1em;">
-        <span>{{ makeup.name }}</span>
+        <span>{{ name }}</span>
         <div class="bottom clearfix">
-          <el-button type="text" class="button">Operation</el-button>
+          <el-button type="text" class="button">Click</el-button>
         </div>
       </div>
     </el-card>
@@ -19,10 +19,14 @@
 <script>
 export default {
   name: "CosmeticCard",
-    props: {
-      makeup: Object
+  data(){
+    return{
+      name: 'Name',
+
+
     }
-};
+  }
+}
 </script>
 
 <style scoped>
