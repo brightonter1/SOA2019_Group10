@@ -26,7 +26,7 @@
           ></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button @click="onSubmit">เข้าสู่ระบบ</el-button>
+          <el-button @click="login(form)">เข้าสู่ระบบ</el-button>
         </el-form-item>
       </el-form>
       <div style="padding: 30px">
@@ -40,20 +40,19 @@
 </template>
 
 <script>
+import authen from '../functions/Authen'
 export default {
   name: "Login",
   data() {
     return {
       form: {
-        username: "",
-        password: ""
+        username: '',
+        password: ''
       }
     };
   },
   methods: {
-    onSubmit() {
-      alert("submit!");
-    }
+    ...authen.methods,
   }
 };
 </script>

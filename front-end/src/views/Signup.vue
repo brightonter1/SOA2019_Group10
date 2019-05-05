@@ -40,7 +40,7 @@
           ></el-date-picker>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="submitForm('signupForm')"
+          <el-button type="primary" @click="register(signupForm)"
             >สมัครสมาชิก</el-button
           >
         </el-form-item>
@@ -51,7 +51,7 @@
 
 <script>
 import firebase from 'firebase';
-
+import authen from '../functions/Authen'
 
 export default {
   name: "Signup",
@@ -99,12 +99,12 @@ export default {
         email: [
           {
             required: true,
-            message: "Please input email address",
+            message: "กรุณากรอก email",
             trigger: "blur"
           },
           {
             type: "email",
-            message: "Please input correct email address",
+            message: "email ของท่านไม่ถูกต้อง",
             trigger: ["blur", "change"]
           }
         ],
@@ -139,6 +139,7 @@ export default {
     };
   },
   methods: {
+    ...authen.methods,
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
@@ -160,7 +161,8 @@ export default {
           return false;
         }
       });
-    }
+    },
+    
   }
 };
 </script>
