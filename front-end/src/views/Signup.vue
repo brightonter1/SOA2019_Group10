@@ -29,18 +29,9 @@
             autocomplete="off"
           ></el-input>
         </el-form-item>
-        <el-form-item label="วันเกิด" prop="birthday">
-          <!--<div class="input-label" style="user-select: none"><span style="color: red;">*</span> วันเกิด</div>-->
-          <el-date-picker
-            id="birthday"
-            type="date"
-            placeholder="เลือกวันที่"
-            v-model="signupForm.birthday"
-            style="width: 100%"
-          ></el-date-picker>
-        </el-form-item>
+
         <el-form-item>
-          <el-button type="primary" @click="register(signupForm)"
+          <el-button type="primary" @click="register(signupForm.username, signupForm.email, signupForm.password)"
             >สมัครสมาชิก</el-button
           >
         </el-form-item>
@@ -51,7 +42,7 @@
 
 <script>
 import firebase from 'firebase';
-import authen from '../functions/Authen'
+import auth from '../functions/Authen'
 
 export default {
   name: "Signup",
@@ -81,7 +72,6 @@ export default {
         email: "",
         password: "",
         repassword: "",
-        birthday: ""
       },
       rules: {
         username: [
@@ -126,20 +116,12 @@ export default {
             validator: validatePass2,
             trigger: "blur"
           }
-        ],
-        birthday: [
-          {
-            type: "date",
-            required: true,
-            message: "กรุณาเลือกวันที่",
-            trigger: "change"
-          }
         ]
       }
     };
   },
   methods: {
-    ...authen.methods,
+    ...auth.methods,
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
