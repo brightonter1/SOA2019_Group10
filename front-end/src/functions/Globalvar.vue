@@ -2,7 +2,7 @@
 export default {
     data(){
         return{
-            server: 'localhost:8093/'
+            server: 'http://localhost:1323/'
         }
     }
 }
