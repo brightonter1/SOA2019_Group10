@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane label="Face Care" name="first">
+      <el-tab-pane label="Face Care" name="first" v-loading="loading">
         <el-row style="margin: 80px">
           <el-col :span="6" v-for="cosmetic in cosmetics">
             <CosmeticCard :makeup="cosmetic"></CosmeticCard>
@@ -28,7 +28,8 @@ export default {
   data() {
     return {
         cosmetics: [],
-      activeName: "first"
+      activeName: "first",
+        loading: true
     };
   },
     mounted() {
@@ -36,11 +37,11 @@ export default {
     },
     methods: {
         fetchCosmetic() {
-            axios.get("https://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush").then(
+            axios.get("http://localhost:8091/cosmetics").then(
                 function(response) {
                     this.cosmetics = response.data;
                     console.log(response.data);
-                    //this.loading = false;
+                    this.loading = false;
                 }.bind(this)
             );
         },

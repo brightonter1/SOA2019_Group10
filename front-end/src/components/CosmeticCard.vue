@@ -2,10 +2,10 @@
   <div>
     <el-card
       :body-style="{ padding: '0px' }"
-      style="margin-bottom: 1em;"
+      style="margin-bottom: 1em; height: 350px"
       shadow="hover"
     >
-      <img :src="makeup.image_link" style="height: 200px; width: auto"/>
+      <img :src="makeup.image_link" style="height: 200px; width: auto; padding: 20px"/>
       <div style="padding: 1em;">
         <span>{{ makeup.name }}</span>
         <div class="bottom clearfix">
