@@ -5,7 +5,10 @@
       style="margin-bottom: 1em; height: 350px"
       shadow="hover"
     >
-      <img :src="makeup.image_link" style="height: 200px; width: auto; padding: 20px"/>
+      <img
+        :src="makeup.image_link"
+        style="height: 200px; width: auto; padding: 20px"
+      />
       <div style="padding: 1em;">
         <span>{{ makeup.name }}</span>
         <div class="bottom clearfix">
@@ -19,9 +22,9 @@
 <script>
 export default {
   name: "CosmeticCard",
-    props: {
-      makeup: Object
-    }
+  props: {
+    makeup: Object
+  }
 };
 </script>
 
