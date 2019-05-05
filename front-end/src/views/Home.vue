@@ -23,6 +23,11 @@ import CosmeticCard from "@/components/CosmeticCard.vue"
 
 export default {
   name: "home",
+  data(){
+    return{
+      listdata:[]
+    }
+  },
   components: {
     CosmeticCard
   }
