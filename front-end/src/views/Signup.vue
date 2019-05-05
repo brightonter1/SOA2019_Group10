@@ -90,18 +90,18 @@ export default {
           {
             min: 8,
             message: "ชื่อผู้ใช้งานต้องมีความยาว 8 ตัวอักษรขึ้นไป",
-            trigger: "blur"
+            trigger: ["blur", "change"]
           }
         ],
         email: [
           {
             required: true,
-            message: "Please input email address",
+            message: "กรุณากรอกอีเมล",
             trigger: "blur"
           },
           {
             type: "email",
-            message: "Please input correct email address",
+            message: "รูปแบบอีเมลไม่ถูกต้อง",
             trigger: ["blur", "change"]
           }
         ],
@@ -109,7 +109,7 @@ export default {
           {
             min: 8,
             message: "รหัสผ่านต้องมีความยาว 8 ตัวอักษรขึ้นไป",
-            trigger: "blur"
+            trigger: ["blur", "change"]
           },
           {
             required: true,
@@ -121,7 +121,7 @@ export default {
           {
             required: true,
             validator: validatePass2,
-            trigger: "blur"
+            trigger: ["blur", "change"]
           }
         ],
         birthday: [

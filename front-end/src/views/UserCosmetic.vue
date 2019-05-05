@@ -1,18 +1,21 @@
 <template>
   <div class="app">
     <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane label="Face Care" name="first" v-loading="loading">
-        <el-row style="margin: 80px">
-          <el-col :span="6" v-for="cosmetic in cosmetics">
-            <CosmeticCard :makeup="cosmetic"></CosmeticCard>
-          </el-col>
-        </el-row>
+      <el-tab-pane label="Pencil" name="pencil">
       </el-tab-pane>
-      <el-tab-pane label="Base Makeup" name="second"> </el-tab-pane>
-      <el-tab-pane label="Makeup" name="third"> </el-tab-pane>
-      <el-tab-pane label="Perfume" name="fourth"> </el-tab-pane>
-      <el-tab-pane label="Hair Care" name="fifth"> </el-tab-pane>
-      <el-tab-pane label="Body Care" name="sixth"> </el-tab-pane>
+      <el-tab-pane label="Lipstick" name="lipstick">
+      </el-tab-pane>
+      <el-tab-pane label="Liquid" name="liquid"> </el-tab-pane>
+      <el-tab-pane label="Powder" name="powder"> </el-tab-pane>
+      <el-tab-pane label="Gel" name="gel"> </el-tab-pane>
+      <el-tab-pane label="Cream" name="cream"> </el-tab-pane>
+      <el-tab-pane label="Concealer" name="concealer"> </el-tab-pane>
+      <el-tab-pane label="Highlighter" name="highlighter"> </el-tab-pane>
+      <el-row style="margin: 80px" v-loading="loading">
+        <el-col :span="6" v-for="cosmetic in cosmetics">
+          <CosmeticCard :makeup="cosmetic"></CosmeticCard>
+        </el-col>
+      </el-row>
     </el-tabs>
   </div>
 </template>
@@ -28,7 +31,7 @@ export default {
   data() {
     return {
         cosmetics: [],
-      activeName: "first",
+      activeName: "pencil",
         loading: true
     };
   },
@@ -37,17 +40,26 @@ export default {
     },
     methods: {
         fetchCosmetic() {
-            axios.get("http://localhost:8091/cosmetics").then(
+            axios.get("http://localhost:8091/category/"+this.activeName).then(
                 function(response) {
                     this.cosmetics = response.data;
                     console.log(response.data);
-                    this.loading = false;
                 }.bind(this)
             );
+            this.loading = false;
         },
         handleClick(tab, event) {
             console.log(tab, event);
+            console.log(this.activeName);
+        },
+    },
+    watch: {
+        activeName: function(val) {
+            if (val) {
+                this.fetchCosmetic();
+            }
         }
+
     }
 };
 </script>

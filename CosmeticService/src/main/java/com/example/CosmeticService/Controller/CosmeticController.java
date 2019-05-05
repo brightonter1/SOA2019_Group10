@@ -45,7 +45,7 @@ public class CosmeticController {
 
 
     /*
-     *  Tag : [ pencil , lipstick , liquid , powerder , gel , cream , concealer
+     *  Tag : [ pencil , lipstick , liquid , powder , gel , cream , concealer
      *  , highlighter ]
      *
      * */
