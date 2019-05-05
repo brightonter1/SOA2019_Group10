@@ -1,25 +1,16 @@
-package com.example.UserService.model;
+package com.cosmetic.user.user.dto;
 
-import lombok.Data;
+public class UsernamePasswordDTO {
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Data
-@Entity
-public class User {
-    @Id
     private String username;
     private String password;
 
-    public User() {
-    }
-
-    public User(String username, String password) {
+    public UsernamePasswordDTO(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    public UsernamePasswordDTO() {
     }
 
     public String getUsername() {
@@ -38,4 +29,3 @@ public class User {
         this.password = password;
     }
 }
-
