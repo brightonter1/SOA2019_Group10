@@ -10,4 +10,5 @@ import java.util.List;
 public interface WishListRepository extends CrudRepository<Wishlist, String> {
 
     List<Wishlist> findAllByUsername(String username);
+    List<Wishlist> findAll();
 }

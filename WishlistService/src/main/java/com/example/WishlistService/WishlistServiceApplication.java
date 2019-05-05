@@ -27,9 +27,9 @@ public class WishlistServiceApplication {
 		};
 	}
 
-//	@Bean
-//	public RestTemplate getRestTemplate() {
-//		return new RestTemplate();
-//	}
+	@Bean
+	public RestTemplate getRestTemplate() {
+		return new RestTemplate();
+	}
 
 }
