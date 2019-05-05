@@ -27,8 +27,5 @@ public class AuthenticationController {
         return userService.signin(usernamePasswordDTO);
     }
 
-//    @GetMapping("/test")
-//    public String test(@RequestHeader(value="Authorization") String token) {
-//
-//    }
+
 }

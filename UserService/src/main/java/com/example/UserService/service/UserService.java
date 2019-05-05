@@ -1,54 +1,39 @@
 package com.example.UserService.service;
 
-import com.example.UserService.model.User;
+import com.example.UserService.domain.UserDomain;
+import com.example.UserService.dto.UserDTO;
 import com.example.UserService.repository.UserRepository;
+import com.example.UserService.response.CustomException;
+import com.example.UserService.response.CustomResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
-import java.security.*;
-import java.util.Optional;
-
 @Service
-public class UserService extends HttpServlet {
+public class UserService {
+    private Logger logger = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
-    private UserRepository userRepository;
+    UserRepository userRepository;
 
-    public String login(User user) throws NoSuchAlgorithmException {
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
-        Optional<User> userFromDB = userRepository.findById(user.getUsername());
+    public ResponseEntity<CustomResponse> signup(UserDTO userDTO) {
+        if (!userRepository.existsByUsername(userDTO.getUsername())) {
+            UserDomain userDomain = new UserDomain(userDTO.getUsername(), userDTO.getEmail());
+            userDomain.setPassword(passwordEncoder.encode(userDTO.getPassword()));
 
-        String encodePassword = encode(user.getPassword());
+            userRepository.save(userDomain);
 
-        if(encodePassword.equals(userFromDB.get().getPassword())){
-            return "login complete";
-        }else{
-            return "failed to login";
+            return new ResponseEntity<CustomResponse>(new CustomResponse("created"), HttpStatus.CREATED);
+        } else {
+            throw new CustomException("username was exists", HttpStatus.UNPROCESSABLE_ENTITY);
         }
     }
-
-    public String getEncode(String message) throws NoSuchAlgorithmException {
-
-        return encode(message);
-
-    }
-
-    public String encode(String text) throws NoSuchAlgorithmException {
-        MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-        byte[] hash = messageDigest.digest(text.getBytes(StandardCharsets.UTF_8));
-        BigInteger bigInteger = new BigInteger(1, hash);
-        String hashText = bigInteger.toString(16);
-        while(hashText.length() < 64){
-            hashText = "0" + hashText;
-        }
-        return hashText;
-    }
-
-
 
 }
