@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul>
+    <ul v-loading="loading">
       <li v-for="i in cosmetic" v-bind:key="i.id">
         {{ i.name }}
       </li>
@@ -14,7 +14,8 @@ export default {
   name: "Test",
   data() {
     return {
-      cosmetic: []
+      cosmetic: [],
+      loading: true
     };
   },
   mounted() {
@@ -26,6 +27,7 @@ export default {
         function(response) {
           this.cosmetic = response.data;
           console.log(response.data);
+          this.loading = false;
         }.bind(this)
       );
     }

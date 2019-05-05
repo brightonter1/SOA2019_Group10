@@ -10,38 +10,56 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 
-@RequestMapping("/cosmetics")
 @RestController
 public class CosmeticController {
 
     @Autowired
     private CosmeticService cosmeticService;
 
-    @GetMapping("/")
+
+    @GetMapping("/cosmetics")
     public List<Cosmetic> getAllCosmetic(){
         return cosmeticService.getAllCosmetic();
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @RequestMapping(value = "/cosmetics", method = RequestMethod.POST)
     public void addCosmetic(@RequestBody Cosmetic cosmetic){
         cosmeticService.addCosmetic(cosmetic);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/cosmetics/{id}", method = RequestMethod.DELETE)
     public void removeCosmetic(@PathVariable Long id){
         cosmeticService.removeCosmetic(id);
     }
 
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/cosmetics/{id}", method = RequestMethod.GET)
     public Optional<Cosmetic> getItemById(@PathVariable Long id){
         return cosmeticService.getItemById(id);
-
     }
+
+
+    /*
+     *  Tag : [ pencil , lipstick , liquid , powerder , gel , cream , concealer
+     *  , highlighter ]
+     *
+     * */
+    @GetMapping("/category/{tag}")
+    public List<Cosmetic> getAllByTag(@PathVariable String tag){
+        return cosmeticService.getAllByTag(tag);
+    }
+
+
+
+
+
+
+
 
 
 }
