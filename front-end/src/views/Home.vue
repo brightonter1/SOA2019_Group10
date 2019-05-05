@@ -18,7 +18,8 @@
 
 <script>
 // @ is an alias to /src
-import CosmeticCard from "@/components/CosmeticCard.vue";
+import CosmeticCard from "@/components/CosmeticCard.vue"
+
 
 export default {
   name: "home",

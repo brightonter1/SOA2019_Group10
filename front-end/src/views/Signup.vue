@@ -50,6 +50,9 @@
 </template>
 
 <script>
+import firebase from 'firebase';
+
+
 export default {
   name: "Signup",
   data() {
@@ -139,7 +142,8 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert("submit!!");
+         // alert(this.signupForm.username);
+          
           // this.$confirm('This will permanently delete the file. Continue?', {
           //     confirmButtonText: 'OK',
           //     cancelButtonText: 'Cancel',
