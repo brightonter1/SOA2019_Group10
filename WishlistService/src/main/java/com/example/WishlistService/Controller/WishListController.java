@@ -35,6 +35,11 @@ public class WishListController {
     @Autowired
     private TokenService tokenService;
 
+    @GetMapping
+    public String SayHello(){
+        return "Hello wishlist-serive";
+    }
+
     public WishListController(){
         this.restTemplate = new RestTemplate();
         this.cosmetics = new ArrayList<>();
@@ -42,7 +47,7 @@ public class WishListController {
         this.cosList = new ArrayList<Cosmetic>();
     }
 
-    @PostMapping("/all")
+    @GetMapping("/all")
     public ResponseEntity<CosmeticResponse> getProductList(@RequestHeader (value = "Authorization") String token) {
             String username = tokenService.getUsernameFromToken(token);
             Logger logger = LoggerFactory.getLogger(WishListController.class);

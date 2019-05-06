@@ -23,6 +23,11 @@ public class UserController {
     @Autowired
     TokenService tokenService;
 
+    @GetMapping
+    public String SayHello(){
+        return "Hello User-serive";
+    }
+
     @PostMapping("/signup")
     public ResponseEntity<CustomResponse> signup(@RequestBody UserDTO userDTO) {
         return userService.signupService(userDTO);

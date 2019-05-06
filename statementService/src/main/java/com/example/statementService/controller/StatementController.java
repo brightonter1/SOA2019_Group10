@@ -22,7 +22,7 @@ public class StatementController {
 
     Logger logger = LoggerFactory.getLogger(StatementController.class);
 
-    @GetMapping("")
+    @GetMapping("/all")
     public List<Statement> getStatementByUsername(@RequestHeader (value = "Authorization") String token){
         String username = tokenService.getUsernameFromToken(token);
         return statementService.getStatementByUsername(username);
