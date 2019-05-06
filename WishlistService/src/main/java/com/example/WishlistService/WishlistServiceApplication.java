@@ -34,10 +34,7 @@ public class WishlistServiceApplication {
 		};
 	}
 
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
+
 
 	@Bean
 	public RestTemplate getRestTemplate() {

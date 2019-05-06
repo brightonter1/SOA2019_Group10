@@ -43,9 +43,8 @@ public class CosmeticController {
         return cosmeticService.getItemById(id);
     }
 
-
     /*
-     *  Tag : [ pencil , lipstick , liquid , powerder , gel , cream , concealer
+     *  Tag : [ pencil , lipstick , liquid , powder , gel , cream , concealer
      *  , highlighter ]
      *
      * */
@@ -53,6 +52,8 @@ public class CosmeticController {
     public List<Cosmetic> getAllByTag(@PathVariable String tag){
         return cosmeticService.getAllByTag(tag);
     }
+
+
 
 
 
