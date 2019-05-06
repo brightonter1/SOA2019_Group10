@@ -13,6 +13,7 @@ export default {
       axios
         .get(server + "cosmetics")
         .then(res => {
+          console.log(res)
           this.listdata = res.data;
         })
         .catch(err => {

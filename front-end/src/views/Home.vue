@@ -7,9 +7,9 @@
     </el-carousel>
     <!--<HelloWorld msg="Welcome to Your Vue.js App" />-->
     <div>
-      <el-row style="margin: 80px">
-        <el-col :span="6" v-for="o in 20" :key="listdata[o].id">
-          <CosmeticCard v-bind:name="listdata[o].name" v-bind:image="listdata[o].image_link"></CosmeticCard>
+      <el-row v-for="i in 5" :key="i" style="margin: 80px">
+        <el-col :span="6" v-for="o in 4" :key="o">
+          <CosmeticCard v-bind:name="listdata[i*o].name" v-bind:image="listdata[i*o].image_link"></CosmeticCard>
         </el-col>
       </el-row>
     </div>
@@ -34,9 +34,9 @@ export default {
   methods:{
     ...Cosmetic.methods
   },
-  mounted(){
+  created(){
     this.getCosmetics()
-  }
+  },
 };
 </script>
 
