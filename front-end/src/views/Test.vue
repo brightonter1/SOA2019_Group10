@@ -10,6 +10,8 @@
 
 <script>
 import axios from "axios";
+import variable from "../functions/Globalvar";
+const server = variable.data().cosmetic;
 export default {
   name: "Test",
   data() {

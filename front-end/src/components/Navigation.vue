@@ -16,10 +16,11 @@
       </el-col>
       <el-col :xs="5" :sm="5" :md="5" :lg="4" :xl="4">
         <div class="grid-content bg-purple">
-          <router-link to="/login/" class="hidden-sm-and-down">
-            <el-button icon="el-icon-user-solid">สมัครสมาชิก/เข้าสู่ระบบ</el-button>
+          <router-link v-if="msg == 'no'" to="/login/" class="hidden-sm-and-down">
+            <el-button  icon="el-icon-user-solid">สมัครสมาชิก/เข้าสู่ระบบ</el-button>
           </router-link>
-          <router-link to="/login/" class="hidden-md-and-up"
+          <el-button v-else v-on:click="signout()" icon="el-icon-user-solid">ออกจากระบบ</el-button>
+          <router-link to="/login/" v-if="msg == 'no'" class="hidden-md-and-up"
             ><el-button icon="el-icon-user-solid"></el-button
           ></router-link>
         </div>
@@ -29,8 +30,21 @@
 </template>
 
 <script>
+
+import auth from '../functions/Authen'
 export default {
-  name: "Navigation"
+  name: "Navigation",
+  data(){
+    return{
+      msg:''
+    }
+  },
+  methods:{
+    ...auth.methods
+  },
+  mounted(){
+    this.checklogin()
+  }
 };
 </script>
 

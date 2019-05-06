@@ -2,7 +2,7 @@
 <script>
 import axios from 'axios'
 import variable from './Globalvar'
-const server = variable.data().server
+const server = variable.data()
 export default {
     data(){
         return{
@@ -11,12 +11,12 @@ export default {
     },
     methods: {
         login(user){
-            console.log(server)
-            axios.post(server + 'user/signin', user)
+            axios.post(server.server + 'user/signin', user)
             .then(res=>{
                 localStorage.setItem('token', res.data.token)
                 this.msg = 'login success'
-                this.$router.push('/')
+                
+            window.location.replace('/');
             }).catch(err=>{
                 this.msg = 'fail'
             })
@@ -27,33 +27,34 @@ export default {
                 email: email,
                 password: password
             }
-            axios.post(server + 'user/signup', user)
+            axios.post(server.server + 'user/signup', user)
             .then(res=>{
                 this.msg = 'register success'
-                this.$router.push('/')
+                
+            window.location.replace('/');
             })
             .catch(err=>{
                 this.msg = 'register fail please try again'
             })
         },
         checklogin(){
-            axios.get(server + 'user/information', {
+            axios.get(server.auth + 'user/information', {
                 headers:{
                     'Authorization': 'Baerer ' + localStorage.token
                 }
             }).then(res=>{
-                console.log(res)
+                console.log(res.data)
                 localStorage.setItem('username', res.data.username)
-                return res.data
+                this.msg = 'yes'
             })
             .catch(err=>{
                 localStorage.clear()
-                console.log('not login')
+                this.msg ='no'
             })
         },
         signout(){
             localStorage.clear()
-            this.$router.push('/')
+            window.location.replace('/');
         }
     },
 }

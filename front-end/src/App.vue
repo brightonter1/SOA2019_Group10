@@ -14,6 +14,7 @@
 import auth from './functions/Authen'
 import Navigation from "./components/Navigation";
 import BottomNav from "./components/BottomNav";
+import { setInterval } from 'timers';
 export default {
   name: "app",
   components: { Navigation, BottomNav },
