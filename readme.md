@@ -8,10 +8,24 @@
   * run  
     * mvnw spring-boot:run  
 
-## Testing
+## Endpoint
 
-```bash
-$ command here!!
-```
-
-itest
+| Service | Endpoint |
+| ------- | -------- |
+| User | POST/user/signup |
+| | POST/user/signin |
+| | GET/user/infomation |
+| | GET/user/signout |
+| Wishlist |GET/wishlist/all |
+| |POST/wishlist/add |
+| |DELETE/wishlist |
+| Statement | GET/statement |
+| |POST/statement|
+| |DELETE/statement|
+| Cosmetic |GET/cosmetics |
+| |POST/cosmetics|
+| |DELETE/cosmetics/{id}|
+| |GET/cosmetics/{id}|
+| Inventory |GET/inventory/all|
+| |DELETE/inventory|
+| |POST/inventory|
