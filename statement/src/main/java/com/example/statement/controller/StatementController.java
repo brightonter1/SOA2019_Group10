@@ -2,6 +2,9 @@ package com.example.statement.controller;
 
 import com.example.statement.model.Statement;
 import com.example.statement.service.StatementService;
+import com.example.statement.service.TokenService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +17,10 @@ public class StatementController {
 
     @Autowired
     private StatementService statementService;
+    @Autowired
+    private TokenService tokenService;
+
+    Logger logger = LoggerFactory.getLogger(StatementController.class);
 
     @GetMapping("")
     public List<Statement> getStatementByUsername(@RequestParam String username){
@@ -21,14 +28,15 @@ public class StatementController {
     }
 
     @PostMapping("")
-    public void addStatementByUsername(@RequestBody Statement statement) throws ParseException {
-        statementService.addStatementByUsername(statement);
+    public void addStatementByUsername(@RequestHeader (value = "Authorization" ) String token , @RequestBody Statement statement) throws ParseException {
+        logger.info(statement.toString());
+        String username = tokenService.getUsernameFromToken(token);
+        statementService.addStatementByUsername(username, statement);
     }
 
     @DeleteMapping("")
     public void DeleteStatementByid(@RequestHeader (value = "Authorization") String token, @RequestParam Long id){
-        String username = toket
-        statementService.DeleteStatementById(username, id);
+        statementService.DeleteStatementById(token, id);
     }
 
 }

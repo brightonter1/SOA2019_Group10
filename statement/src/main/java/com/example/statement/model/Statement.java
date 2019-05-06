@@ -27,6 +27,14 @@ public class Statement {
     private String itemname;
     private double price;
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public Date getCreate_date() {
         return create_date;
     }

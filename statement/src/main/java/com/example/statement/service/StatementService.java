@@ -21,19 +21,24 @@ public class StatementService {
     @Autowired
     private StatementRepository statementRepository;
 
+    @Autowired
+    private TokenService tokenService;
+
     public List<Statement> getStatementByUsername(String username) {
         return statementRepository.findAllByUsername(username);
     }
 
-    public void addStatementByUsername(Statement statement) throws ParseException {
+    public void addStatementByUsername(String username, Statement statement) throws ParseException {
         Logger logger = LoggerFactory.getLogger(StatementService.class);
-        //statement.convertDate(statement.getCreate_date()).toString();
-        //logger.info(String.valueOf(statement.convertDate(String.valueOf(statement.getCreate_date()))));
+        statement.setUsername(username);
         statementRepository.save(statement);
-        //logger.info(statement.getCreate_date().toString());
     }
 
-    public void DeleteStatementById(Long id){
-        statementRepository.deleteById(id);
+    public void DeleteStatementById(String token, Long id){
+
+        if(tokenService.validateToken(token)){
+            statementRepository.deleteById(id);
+        }
+
     }
 }
