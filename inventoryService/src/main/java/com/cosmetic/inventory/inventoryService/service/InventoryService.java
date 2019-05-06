@@ -1,15 +1,16 @@
 package com.cosmetic.inventory.inventoryService.service;
 
+import com.cosmetic.inventory.inventoryService.controller.InventoryController;
+import com.cosmetic.inventory.inventoryService.model.Cosmetic;
 import com.cosmetic.inventory.inventoryService.model.Inventory;
-import com.cosmetic.inventory.inventoryService.model.Item;
+import com.cosmetic.inventory.inventoryService.repository.CosmeticRepository;
 import com.cosmetic.inventory.inventoryService.repository.InventoryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -19,25 +20,37 @@ public class InventoryService {
     @Autowired
     private InventoryRepository inventoryRepository;
 
-    private RestTemplate restTemplate;
-    private Inventory inventory;
-    private List<Item> items;
+    @Autowired
+    private CosmeticRepository cosmeticRepository;
 
-    public InventoryService(){
-        this.inventory = new Inventory();
-        this.items = new ArrayList<>();
-        this.restTemplate = new RestTemplate();
+
+    public void addItem(String username, Long id){
+        Cosmetic cosmetic = cosmeticRepository.findById(id).get();
+        Inventory inv = new Inventory();
+        inv.setUsername(username);
+        inv.setName(cosmetic.getName());
+        inv.setBrand(cosmetic.getBrand());
+        inv.setCreate_at(String.valueOf(new Date().getTime()));
+        inv.setExp_at(null);
+        inv.setPrice(cosmetic.getPrice());
+        inv.setImage_link(cosmetic.getImage_link());
+        inv.setItemid(cosmetic.getId());
+        inventoryRepository.save(inv);
     }
 
-    public void addItem(String username, Item item){
+    public void removeItem(String username, Long id){
         Logger logger = LoggerFactory.getLogger(InventoryService.class);
 
-        logger.info(username + " " + item.toString());
+        List<Inventory> inventory = inventoryRepository.findAllByUsername(username);
 
-        items.add(item);
-        inventory.setUsername(username);
-        inventory.setItemList(items);
-        inventoryRepository.save(inventory);
+        logger.info(inventory.toString());
+        for (int i = 0 ; i < inventory.size() ; i++){
+            if (inventory.get(i).getId().equals(id)){
+                inventoryRepository.delete(inventory.get(i));
+            }
+        }
+
+
 
     }
 
