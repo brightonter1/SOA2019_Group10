@@ -61,7 +61,8 @@ public class WishListService {
         }
     }
 
-    public void removeItem(String username, Long id) {
+    public void removeItem(String token, Long id) {
+        String username = tokenService.getUsernameFromToken(token);
         wishlist = (ArrayList<Wishlist>) wishListRepository.findAllByUsername(username);
         empty = wishlist.get(0);
         array = empty.getId();

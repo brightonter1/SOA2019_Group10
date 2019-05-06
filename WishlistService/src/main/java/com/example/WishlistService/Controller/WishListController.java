@@ -39,7 +39,7 @@ public class WishListController {
         this.restTemplate = new RestTemplate();
         this.cosmetics = new ArrayList<>();
         this.empty = new Wishlist();
-        this.cosList = new ArrayList<>();
+        this.cosList = new ArrayList<Cosmetic>();
     }
 
     @PostMapping("/all")
@@ -52,11 +52,12 @@ public class WishListController {
                 for (int i = 0; i < box.size(); i++) {
                     cosList.add(restTemplate.getForObject("http://localhost:8093/cosmetics/" + box.get(i), Cosmetic.class));
                 }
-            } else {
-                return new ResponseEntity<CosmeticResponse>(new CosmeticResponse(cosList), HttpStatus.OK);
-            }
 
-        throw new CustomException("fail get productlist wishlist", HttpStatus.UNPROCESSABLE_ENTITY);
+                logger.info(cosList.toString());
+                return new ResponseEntity<CosmeticResponse>(new CosmeticResponse(cosList), HttpStatus.OK);
+            }else {
+                throw new CustomException("fail get productlist wishlist", HttpStatus.UNPROCESSABLE_ENTITY);
+            }
     }
 
     @PostMapping("/add")
