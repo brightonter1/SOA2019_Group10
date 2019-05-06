@@ -7,9 +7,9 @@
     </el-carousel>
     <!--<HelloWorld msg="Welcome to Your Vue.js App" />-->
     <div>
-      <el-row style="margin: 80px">
-        <el-col :span="6" v-for="o in 20" :key="o">
-          <CosmeticCard></CosmeticCard>
+      <el-row v-for="i in 5" :key="i" style="margin: 80px">
+        <el-col :span="6" v-for="o in 4" :key="o">
+          <CosmeticCard v-bind:name="listdata[i*o].name" v-bind:image="listdata[i*o].image_link"></CosmeticCard>
         </el-col>
       </el-row>
     </div>
@@ -19,7 +19,7 @@
 <script>
 // @ is an alias to /src
 import CosmeticCard from "@/components/CosmeticCard.vue"
-
+import Cosmetic from '../functions/Cosmetic'
 
 export default {
   name: "home",
@@ -30,7 +30,13 @@ export default {
   },
   components: {
     CosmeticCard
-  }
+  },
+  methods:{
+    ...Cosmetic.methods
+  },
+  created(){
+    this.getCosmetics()
+  },
 };
 </script>
 

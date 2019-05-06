@@ -83,7 +83,7 @@ export default {
           {
             min: 8,
             message: "ชื่อผู้ใช้งานต้องมีความยาว 8 ตัวอักษรขึ้นไป",
-            trigger: "blur"
+            trigger: ["blur", "change"]
           }
         ],
         email: [
@@ -102,7 +102,7 @@ export default {
           {
             min: 8,
             message: "รหัสผ่านต้องมีความยาว 8 ตัวอักษรขึ้นไป",
-            trigger: "blur"
+            trigger: ["blur", "change"]
           },
           {
             required: true,
@@ -114,7 +114,7 @@ export default {
           {
             required: true,
             validator: validatePass2,
-            trigger: "blur"
+            trigger: ["blur", "change"]
           }
         ]
       }
@@ -143,7 +143,7 @@ export default {
           return false;
         }
       });
-    },
+    }
     
   }
 };
