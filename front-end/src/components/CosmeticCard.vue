@@ -5,7 +5,7 @@
       style="margin-bottom: 1em;"
       shadow="hover"
     >
-      <img src="../assets/cosmetic-img.jpg"/>
+      <img v-bind:src="image"/>
       <div style="padding: 1em;">
         <span>{{ name }}</span>
         <div class="bottom clearfix">
@@ -20,7 +20,8 @@
 import { prototype } from 'events';
 export default {
   props:{
-    name:String
+    name:String,
+    image:String
   },
   name: "CosmeticCard",
 }
