@@ -3,21 +3,21 @@
     <div class="login-box">
       <h1>เข้าสู่ระบบ</h1>
       <el-form
-        ref="login-form"
+        ref="form"
         id="login-form"
         :model="form"
+        :rules="rules"
         style="width: 100%;"
       >
-        <el-form-item>
-          <div class="input-label">Username</div>
+        <el-form-item label="Username" prop="username">
           <el-input
             id="username"
             placeholder="Username"
             v-model="form.username"
+            type="text"
           ></el-input>
         </el-form-item>
-        <el-form-item>
-          <div class="input-label">Password</div>
+        <el-form-item label="Password" prop="password">
           <el-input
             id="password"
             type="password"
@@ -46,8 +46,24 @@ export default {
   data() {
     return {
       form: {
-        username: '',
-        password: ''
+        username: "",
+        password: ""
+      },
+      rules: {
+        username: [
+          {
+            required: true,
+            message: "กรุณากรอกชื่อผู้ใช้งาน",
+            trigger: ["blur", "change"]
+          }
+        ],
+        password: [
+          {
+            required: true,
+            message: "กรุณารหัสผ่าน",
+            trigger: ["blur", "change"]
+          }
+        ]
       }
     };
   },
