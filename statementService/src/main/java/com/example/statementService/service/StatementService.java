@@ -24,7 +24,6 @@ public class StatementService {
     }
 
     public void addStatementByUsername(String username, Statement statement) throws ParseException {
-        Logger logger = LoggerFactory.getLogger(StatementService.class);
         statement.setUsername(username);
         statementRepository.save(statement);
     }

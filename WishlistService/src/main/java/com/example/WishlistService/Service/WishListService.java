@@ -17,6 +17,8 @@ public class WishListService {
     @Autowired
     private WishListRepository wishListRepository;
 
+    @Autowired
+    private TokenService tokenService;
 
     private ArrayList<Wishlist> wishlist;
     private List<Long> array;
@@ -30,7 +32,8 @@ public class WishListService {
         wishlist = new ArrayList<>();
     }
 
-    public void addItem(String username, Long id){
+    public void addItem(String token, Long id){
+        String username = tokenService.getUsernameFromToken(token);
         array = new ArrayList<>();
         wishlist = (ArrayList<Wishlist>) wishListRepository.findAllByUsername(username);
         if (!wishlist.isEmpty()){

@@ -29,7 +29,7 @@ public class StatementController {
     }
 
     @PostMapping("")
-    public void addStatementByUsername(@RequestHeader (value = "Authorization" ) String token , @RequestBody Statement statement) throws ParseException {
+    public void addStatementByUsername(@RequestHeader (value = "Authorization" ) String token, @RequestBody Statement statement) throws ParseException {
         String username = tokenService.getUsernameFromToken(token);
         statementService.addStatementByUsername(username, statement);
     }
