@@ -2,7 +2,8 @@
 export default {
     data(){
         return{
-            server: 'http://localhost:1323/'
+            user: 'http://localhost:1323/',
+            cosmetice: 'http://localhost:8091/'
         }
     }
 }

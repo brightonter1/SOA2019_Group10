@@ -19,7 +19,7 @@
 <script>
 // @ is an alias to /src
 import CosmeticCard from "@/components/CosmeticCard.vue"
-
+import Cosmetic from '../functions/Cosmetic'
 
 export default {
   name: "home",
@@ -30,6 +30,12 @@ export default {
   },
   components: {
     CosmeticCard
+  },
+  methods:{
+    ...Cosmetic.methods
+  },
+  mounted(){
+    this.getCosmetics()
   }
 };
 </script>
