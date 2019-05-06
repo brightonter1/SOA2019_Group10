@@ -1,4 +1,8 @@
 package com.cosmetic.inventory.inventoryService.repository;
 
-public interface inventoryRepository {
+import com.cosmetic.inventory.inventoryService.model.Inventory;
+import org.springframework.data.repository.CrudRepository;
+
+public interface InventoryRepository extends CrudRepository<Inventory, Long> {
+
 }

@@ -31,15 +31,12 @@ public class WishListService {
     }
 
     public void addItem(String username, Long id){
-        Logger logger = LoggerFactory.getLogger(WishListService.class);
         array = new ArrayList<>();
         wishlist = (ArrayList<Wishlist>) wishListRepository.findAllByUsername(username);
         if (!wishlist.isEmpty()){
             empty = wishlist.get(0);
             array = empty.getId();
-            logger.info(wishlist.toString());
-            logger.info(empty.toString());
-            logger.info(array.toString());
+
 
             int count = 1;
             for (int i = 0 ; i < array.size() ; i++){
