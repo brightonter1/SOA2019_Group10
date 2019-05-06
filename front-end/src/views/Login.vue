@@ -6,10 +6,9 @@
         ref="form"
         id="login-form"
         :model="form"
-        :rules="rules"
         style="width: 100%;"
       >
-        <el-form-item label="Username" prop="username">
+        <el-form-item required label="Username" prop="username">
           <el-input
             id="username"
             placeholder="Username"
@@ -17,7 +16,7 @@
             type="text"
           ></el-input>
         </el-form-item>
-        <el-form-item label="Password" prop="password">
+        <el-form-item required label="Password" prop="password">
           <el-input
             id="password"
             type="password"
@@ -49,22 +48,22 @@ export default {
         username: "",
         password: ""
       },
-      rules: {
-        username: [
-          {
-            required: true,
-            message: "กรุณากรอกชื่อผู้ใช้งาน",
-            trigger: ["blur", "change"]
-          }
-        ],
-        password: [
-          {
-            required: true,
-            message: "กรุณารหัสผ่าน",
-            trigger: ["blur", "change"]
-          }
-        ]
-      }
+      // rules: {
+      //   username: [
+      //     {
+      //       required: true,
+      //       message: "กรุณากรอกชื่อผู้ใช้งาน",
+      //       trigger: ["blur", "change"]
+      //     }
+      //   ],
+      //   password: [
+      //     {
+      //       required: true,
+      //       message: "กรุณารหัสผ่าน",
+      //       trigger: ["blur", "change"]
+      //     }
+      //   ]
+      // }
     };
   },
   methods: {

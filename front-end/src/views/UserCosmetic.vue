@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="app"
-  >
+  <div class="app">
     <el-tabs v-model="activeName">
       <el-tab-pane label="Pencil" name="pencil"> </el-tab-pane>
       <el-tab-pane label="Lipstick" name="lipstick"> </el-tab-pane>
@@ -13,7 +11,10 @@
       <el-tab-pane label="Highlighter" name="highlighter"> </el-tab-pane>
       <el-row style="margin: 80px" v-loading="loading">
         <el-col :span="6" v-for="cosmetic in cosmetics" :key="cosmetic.id">
-          <CosmeticCard :makeup="cosmetic"></CosmeticCard>
+          <CosmeticCard
+            :name="cosmetic.name"
+            :image="cosmetic.image_link"
+          ></CosmeticCard>
         </el-col>
       </el-row>
     </el-tabs>
@@ -23,6 +24,8 @@
 <script>
 import axios from "axios";
 import CosmeticCard from "@/components/CosmeticCard.vue";
+import variable from "../functions/Globalvar";
+const server = variable.data().cosmetic;
 export default {
   name: "UserCosmetic",
   components: {
@@ -40,13 +43,13 @@ export default {
   },
   methods: {
     fetchCosmetic() {
-      axios.get("http://localhost:8091/category/" + this.activeName).then(
+      axios.get(server + "category/" + this.activeName).then(
         function(response) {
           this.cosmetics = response.data;
         }.bind(this)
       );
       this.loading = false;
-    },
+    }
   },
   watch: {
     activeName: function(val) {
@@ -58,4 +61,5 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style>
-
+  @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
   @import url('https://fonts.googleapis.com/css?family=Kanit');
 
   * {
