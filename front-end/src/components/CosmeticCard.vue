@@ -2,10 +2,11 @@
   <div>
     <el-card
       :body-style="{ padding: '0px' }"
-      style="margin-bottom: 1em;"
+      style="margin-bottom: 1em;height:auto;width:100%"
       shadow="hover"
     >
-      <img v-bind:src="image"/>
+    <div v-bind:style="{ 'background-image': 'url(' + image + ')' }" style="background-size:cover;width:100%;max-height:300px;height:300px"></div>
+      <!-- <img v-bind:src="image" height="auto" width="100%"/> -->
       <div style="padding: 1em;">
         <span>{{ name }}</span>
         <div class="bottom clearfix">
