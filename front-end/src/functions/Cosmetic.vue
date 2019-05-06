@@ -1,7 +1,7 @@
 <script>
 import axios from 'axios'
 import variable from './Globalvar'
-const server = variable.data().server
+const server = variable.data().cosmetic
 export default {
     data(){
         return{
@@ -12,7 +12,7 @@ export default {
         getCosmetics(){
             axios.get(server + 'cosmetics')
             .then(res=>{
-                listdata:res.data
+                this.listdata=res.data
             })
             .catch(err=>{
                 console.log("error cosmetic get")

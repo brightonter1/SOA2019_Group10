@@ -3,7 +3,7 @@ export default {
     data(){
         return{
             user: 'http://localhost:1323/',
-            cosmetice: 'http://localhost:8091/'
+            cosmetic: 'http://localhost:8091/'
         }
     }
 }

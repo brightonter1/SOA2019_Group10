@@ -8,8 +8,8 @@
     <!--<HelloWorld msg="Welcome to Your Vue.js App" />-->
     <div>
       <el-row style="margin: 80px">
-        <el-col :span="6" v-for="o in 20" :key="o">
-          <CosmeticCard></CosmeticCard>
+        <el-col :span="6" v-for="data in listdata" :key="data.id">
+          <CosmeticCard v-bind:name="data.name"></CosmeticCard>
         </el-col>
       </el-row>
     </div>

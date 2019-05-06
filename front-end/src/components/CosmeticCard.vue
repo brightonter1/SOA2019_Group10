@@ -17,15 +17,12 @@
 </template>
 
 <script>
+import { prototype } from 'events';
 export default {
+  props:{
+    name:String
+  },
   name: "CosmeticCard",
-  data(){
-    return{
-      name: 'Name',
-
-
-    }
-  }
 }
 </script>
 
