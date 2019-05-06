@@ -2,7 +2,7 @@
 <script>
 import axios from 'axios'
 import variable from './Globalvar'
-const server = variable.data().user
+const server = variable.data().server
 export default {
     data(){
         return{

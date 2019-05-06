@@ -1,7 +1,7 @@
 <script>
 import axios from "axios";
 import variable from "./Globalvar";
-const server = variable.data().cosmetic;
+const server = variable.data().server;
 export default {
   data() {
     return {
