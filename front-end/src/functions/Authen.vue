@@ -50,6 +50,10 @@ export default {
                 localStorage.clear()
                 console.log('not login')
             })
+        },
+        signout(){
+            localStorage.clear()
+            this.$router.push('/')
         }
     },
 }

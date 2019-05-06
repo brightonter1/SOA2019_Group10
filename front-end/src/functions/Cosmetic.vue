@@ -19,6 +19,13 @@ export default {
         .catch(err => {
           console.log("error cosmetic get");
         });
+    },
+    getCosmeticsById(id){
+      axios.get(server + 'cosmetics/' + id).then(res=>{
+        this.listdata = res.data
+      }).catch(e=>{
+        console.log(e)
+      })
     }
   }
 };
