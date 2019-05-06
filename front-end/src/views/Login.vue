@@ -25,7 +25,7 @@
           ></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button @click="login(form)">เข้าสู่ระบบ</el-button>
+          <el-button id="login-button" @click="login(form)">เข้าสู่ระบบ</el-button>
         </el-form-item>
       </el-form>
       <div style="padding: 30px">
