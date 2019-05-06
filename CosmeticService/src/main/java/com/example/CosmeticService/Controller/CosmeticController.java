@@ -43,7 +43,6 @@ public class CosmeticController {
         return cosmeticService.getItemById(id);
     }
 
-
     /*
      *  Tag : [ pencil , lipstick , liquid , powder , gel , cream , concealer
      *  , highlighter ]

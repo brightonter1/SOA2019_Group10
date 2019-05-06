@@ -17,6 +17,8 @@ public class WishListService {
     @Autowired
     private WishListRepository wishListRepository;
 
+    @Autowired
+    private TokenService tokenService;
 
     private ArrayList<Wishlist> wishlist;
     private List<Long> array;
@@ -30,16 +32,14 @@ public class WishListService {
         wishlist = new ArrayList<>();
     }
 
-    public void addItem(String username, Long id){
-        Logger logger = LoggerFactory.getLogger(WishListService.class);
+    public void addItem(String token, Long id){
+        String username = tokenService.getUsernameFromToken(token);
         array = new ArrayList<>();
         wishlist = (ArrayList<Wishlist>) wishListRepository.findAllByUsername(username);
         if (!wishlist.isEmpty()){
             empty = wishlist.get(0);
             array = empty.getId();
-            logger.info(wishlist.toString());
-            logger.info(empty.toString());
-            logger.info(array.toString());
+
 
             int count = 1;
             for (int i = 0 ; i < array.size() ; i++){
@@ -61,7 +61,8 @@ public class WishListService {
         }
     }
 
-    public void removeItem(String username, Long id) {
+    public void removeItem(String token, Long id) {
+        String username = tokenService.getUsernameFromToken(token);
         wishlist = (ArrayList<Wishlist>) wishListRepository.findAllByUsername(username);
         empty = wishlist.get(0);
         array = empty.getId();
