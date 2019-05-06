@@ -55,7 +55,7 @@ public class WishListController {
                 box = wishListRepository.findAllByUsername(username).get(0).getId();
                 cosList.clear();
                 for (int i = 0; i < box.size(); i++) {
-                    cosList.add(restTemplate.getForObject("http://localhost:8093/cosmetics/" + box.get(i), Cosmetic.class));
+                    cosList.add(restTemplate.getForObject("http://35.198.204.154:8093/cosmetics/" + box.get(i), Cosmetic.class));
                 }
 
                 logger.info(cosList.toString());
