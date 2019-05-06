@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f03c36e6-f423-4fe0-8b70-03134d733fe2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../UserSerivce/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UserSerivce/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/java/com/example/apigateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/java/com/example/apigateway/ApiGatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/statementService/controller/StatementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/statementService/controller/StatementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/inventoryService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/inventoryService.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventoryService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../inventoryService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../inventoryService/src/main/java/com/cosmetic/inventory/inventoryService/InventoryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../inventoryService/src/main/java/com/cosmetic/inventory/inventoryService/InventoryServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/statementService/StatementServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/statementService/StatementServiceApplication.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,11 +28,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/statementService/controller/StatementController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
               <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/statementService/StatementServiceApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+              <folding>
+                <element signature="e#856#857#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,7 +84,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/example/statementService/StatementServiceApplication.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/statementService/service/TokenService.java" />
@@ -77,6 +91,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/example/statementService/model/Statement.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/statementService/service/StatementService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/statementService/controller/StatementController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/statementService/StatementServiceApplication.java" />
       </list>
     </option>
   </component>
@@ -98,6 +113,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,7 +212,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -253,17 +268,17 @@
       <workItem from="1557153455007" duration="860000" />
       <workItem from="1557155638491" duration="1932000" />
       <workItem from="1557166183053" duration="1435000" />
+      <workItem from="1557182117099" duration="33000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4227000" />
+    <option name="totallyTimeSpent" value="4260000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -302,7 +317,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/statementService/StatementServiceApplication.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/statementService/response/CustomException.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/statementService/service/TokenService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/statementService/repository/StatementRepository.java" />
@@ -338,6 +352,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/statementService/StatementServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+          <folding>
+            <element signature="e#856#857#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
