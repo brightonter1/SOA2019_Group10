@@ -32,7 +32,7 @@ export default {
             })
         },
          deleteStatement(id){
-            Axios.delete(server+ 'statement'+ id, {
+            Axios.delete(server+ 'statement', id, {
                 headers:{
                     'Authorization': 'Baerer ' + localStorage.token
                 }

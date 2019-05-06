@@ -28,7 +28,7 @@ export default {
             })
         },
          deleteWishlist(id){
-            Axios.post(server+ 'wishlist'+ id, {
+            Axios.post(server+ 'wishlist',id, {
                 headers:{
                     'Authorization': 'Baerer ' + localStorage.token
                 }
