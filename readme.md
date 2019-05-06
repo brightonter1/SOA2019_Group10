@@ -8,7 +8,7 @@
   * run  
     * mvnw spring-boot:run  
 
-## Endpoint
+## API
 
 | Service | Endpoint |
 | ------- | -------- |
