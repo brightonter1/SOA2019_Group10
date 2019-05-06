@@ -2,7 +2,7 @@
 <script>
 import axios from 'axios'
 import variable from './Globalvar'
-const server = variable.data().user
+const server = variable.data().server
 export default {
     data(){
         return{
@@ -50,6 +50,10 @@ export default {
                 localStorage.clear()
                 console.log('not login')
             })
+        },
+        signout(){
+            localStorage.clear()
+            this.$router.push('/')
         }
     },
 }
