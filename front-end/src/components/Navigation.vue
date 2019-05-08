@@ -8,9 +8,9 @@
       <el-col :xs="15" :sm="15" :md="15" :lg="16" :xl="16">
         <div class="grid-content bg-purple-light nav">
           <router-link to="/"><el-button>Home</el-button></router-link>
-          <router-link to="/statement/"><el-button>Statement</el-button></router-link>
+          <!--<router-link to="/statement/"><el-button>Statement</el-button></router-link>-->
           <router-link to="/wishlist/"><el-button>Wish list</el-button></router-link>
-          <router-link to="/test/"><el-button >Inventory</el-button></router-link>
+          <!--<router-link to="/test/"><el-button >Inventory</el-button></router-link>-->
           <router-link to="/cosmetic/"><el-button>รายการเครื่องสำอาง</el-button></router-link>
         </div>
       </el-col>
@@ -19,7 +19,7 @@
           <router-link v-if="msg == 'no'" to="/login/" class="hidden-sm-and-down">
             <el-button id="login-signup" icon="el-icon-user-solid">สมัครสมาชิก/เข้าสู่ระบบ</el-button>
           </router-link>
-          <el-button v-else v-on:click="signout()" icon="el-icon-user-solid" onclick="alert('Logout Complete');">ออกจากระบบ</el-button>
+          <el-button id="signup-button" v-else v-on:click="signout()" icon="el-icon-user-solid" onclick="alert('Logout Complete');">ออกจากระบบ</el-button>
           <router-link to="/login/" v-if="msg == 'no'" class="hidden-md-and-up"
             ><el-button icon="el-icon-user-solid"></el-button
           ></router-link>

@@ -5,7 +5,7 @@
     shadow="hover"
   >
     <div style="overflow: hidden;">
-      <p style="padding-left: 20px; float: left;">{{ makeup.id }}</p>
+      <!--<p style="padding-left: 20px; float: left;">{{ makeup.id }}</p>-->
       <div>
         <img
           :src="makeup.image_link"
@@ -16,8 +16,7 @@
       <div>
         <div style="text-align: left">
           <p>{{ makeup.name }}</p>
-          <p>{{ makeup.price }}</p>
-          <el-button type="danger" icon="el-icon-delete" circle></el-button>
+          <p>{{ makeup.price }} บาท</p>
         </div>
       </div>
     </div>
@@ -28,7 +27,7 @@
 export default {
   name: "WishlistCard",
   props: {
-    makeup: Object
+    makeup: {}
   }
 };
 </script>
